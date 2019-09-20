@@ -9,10 +9,10 @@ public class AppTest2 {
 
     @Test
     public void failingTest() {
+        ITestResult result = Reporter.getCurrentTestResult();
+        result.setAttribute("requirement", "PROJECT-456,PROJECT-789");
+
         System.out.println("This is a TestNG-Maven based test");
         assertEquals(1, 2);
-
-        ITestResult result = Reporter.getCurrentTestResult();
-        result.setAttribute("requirement", "CUMULUS-456,CUMULUS-789");
     }
 }
